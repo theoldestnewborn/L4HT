@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.lang.Math;
@@ -44,16 +45,13 @@ public class Main {
                 System.out.println("Какое число следует удалить из массива?");
                 int number11 = sc.nextInt();
 
-                int[] array12 = new int[number1];
-                int l12 = array12.length;
-
-                for (int i12 = 0; i12 < l12; i12++) {
-                    if (i12 == number11)
-                        continue;
-                    array12[i12] = i12 + 1;
-                    System.out.println(array12[i12]);
-                }
+                int[] array12 = new int[number1 - 1];
+                int pos1 = Arrays.binarySearch(array1, number11);
+                System.arraycopy(array1, 0, array12, 0, pos1);
+                System.arraycopy(array1, pos1 + 1, array12, pos1, (array12.length - pos1));
+                System.out.println(Arrays.toString(array12));
                 break;
+
 
             case 2:
                 System.out.println("Введите размер массива: 0 - ...");
@@ -118,7 +116,38 @@ public class Main {
                     System.out.println("Числа равны");
 
                 }
+                break;
 
+            case 4:
+
+                int choice4;
+                do {
+                    System.out.println("Задайте размер массива, который больше 5 и меньше, либо равен 10");
+                    choice4 = sc.nextInt();
+                } while (choice4 < 6 || choice4 > 10);
+                int[] array4 = new int[choice4];
+                for (int i4 = 0; i4 < array4.length; i4++) {
+                    array4[i4] = (int) (Math.random() * choice4 + i4);
+                }
+                System.out.println(Arrays.toString(array4));
+
+                int sum4 = 0;
+                for (int i41 = 0; i41 < array4.length; i41++) {
+                    if (array4[i41] % 2 != 0 && array4[i41] / 2 != 0) {
+                        sum4 ++;
+                    } else {
+                        continue;
+                    }
+                }
+                int l41 = array4.length - (sum4);
+                System.out.println(l41);
+
+                int [] array411 = new int [array4.length];
+                for (int i411 = 0; i411 < array4.length; i411++) {
+                    if ((array4[i411] % 2 == 0) && (array4[i411] / 2 != 0)) {
+                        array411[i411] = array4[i411];
+                    } else {continue;}
+                } System.out.println(Arrays.toString(array411));
 
         }
     }
