@@ -151,7 +151,7 @@ public class Main {
                     counter++;
                 }
 
-                System.out.println(Arrays.toString(array42));
+                System.out.println(Arrays.toString(array42)); break;
 
 
             case 5:
@@ -175,7 +175,6 @@ public class Main {
                 System.out.println(Arrays.toString(arrayN));
                 Arrays.sort(arrayN);
                 System.out.println(Arrays.toString(arrayN)); break;
-
 
         }
     }
