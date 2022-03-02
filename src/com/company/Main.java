@@ -152,6 +152,31 @@ public class Main {
                 }
 
                 System.out.println(Arrays.toString(array42));
+
+
+            case 5:
+
+                int[] array51 = new int[10];
+                for (int i = 0; i < 10; i++) {
+                    array51[i] = (int) (Math.random() * 100 + 1);
+                }
+                System.out.println(Arrays.toString(array51));
+
+                for (int i1 = 0; i1 <10; i1++) {
+                    if (array51[i1] % 2 != 0) {
+                        array51[i1] = 0;
+                    }
+                }
+                System.out.println(Arrays.toString(array51)); break;
+
+            case 6:
+
+                String [] arrayN = {"Алексей", "Антон", "Илья", "Александр", "Егоар"};
+                System.out.println(Arrays.toString(arrayN));
+                Arrays.sort(arrayN);
+                System.out.println(Arrays.toString(arrayN)); break;
+
+
         }
     }
 }
