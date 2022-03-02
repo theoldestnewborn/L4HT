@@ -1,9 +1,8 @@
 package com.company;
 
-import javax.swing.*;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.lang.Math;
+
 
 public class Main {
 
@@ -125,7 +124,7 @@ public class Main {
                     System.out.println("Задайте размер массива, который больше 5 и меньше, либо равен 10");
                     choice4 = sc.nextInt();
                 } while (choice4 < 6 || choice4 > 10);
-                int[] array4 = new int[choice4];
+                Integer[] array4 = new Integer[choice4];
                 for (int i4 = 0; i4 < array4.length; i4++) {
                     array4[i4] = (int) (Math.random() * choice4 + i4);
                 }
@@ -133,22 +132,27 @@ public class Main {
 
                 int sum4 = 0;
                 for (int i41 = 0; i41 < array4.length; i41++) {
-                    if (array4[i41] % 2 != 0 && array4[i41] / 2 != 0) {
-                        sum4 ++;
-                    } else {
-                        continue;
+                    if (array4[i41] % 2 == 0 && array4[i41] / 2 != 0) {
+                        System.out.println(array4[i41]);
+                        sum4++;
                     }
                 }
-                int l41 = array4.length - (sum4);
-                System.out.println(l41);
+                System.out.println(sum4);
 
-                int [] array411 = new int [array4.length];
-                for (int i411 = 0; i411 < array4.length; i411++) {
-                    if ((array4[i411] % 2 == 0) && (array4[i411] / 2 != 0)) {
-                        array411[i411] = array4[i411];
-                    } else {continue;}
-                } System.out.println(Arrays.toString(array411));
+                int[] array42 = new int[sum4];
 
+                int counter = 0;
+                int i4 = 0;
+                while (counter < array4.length) {
+                    if (array4[counter] % 2 == 0 && array4[counter] / 2 != 0) {
+                        array42[i4] = array4[counter];
+                        i4++;
+                    }
+                    counter++;
+                }
+
+                System.out.println(Arrays.toString(array42));
         }
     }
 }
+
